@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <head>
-<title>Recipe</title>
+<title>array.splice(start, deleteCount, item1, item2, ...)</title>
 <script>
 
-var charSets = new Array("ab","bb","cd","ab","cc","ab","dd","ab");
+var charSets = new Array('ab', 'bb', 'cd', 'ab', 'cc', 'ab', 'dd', 'ab');
 
 // replace element
-while (charSets.indexOf("ab") != -1) {
-   charSets.splice(charSets.indexOf("ab"),1,"**");
+while (charSets.indexOf('ab') !== -1) {
+  charSets.splice(charSets.indexOf('ab'), 1, '**');
 }
-alert(charSets); // **,bb,cd,**,cc,dd,**
+console.log(charSets); // **,bb,cd,**,cc,dd,**
 
 // delete new element
-while(charSets.indexOf("**") != -1) {
-   charSets.splice(charSets.indexOf("**"),1);
+while (charSets.indexOf('**') !== -1) {
+  charSets.splice(charSets.indexOf('**'), 1);
 }
-alert(charSets); // bb,cd,cc,dd
+console.log(charSets); // bb,cd,cc,dd
 
 </script>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Searching for strings</title>
+<title>string.replace(re, )</title>
 <style>
 #searchSubmit
 {
@@ -17,28 +17,25 @@
 }
 </style>
 <script>
-//<![CDATA[
 
-window.onload=function() {
-   document.getElementById("searchSubmit").onclick=doSearch;
-}
+window.onload = function () {
+  document.getElementById('searchSubmit').onclick = doSearch;
+};
 
 function doSearch() {
-   // get pattern
-   var pattern = document.getElementById("pattern").value;
-   var re = new RegExp(pattern,"g");
+  // get pattern
+  var pattern = document.getElementById('pattern').value;
+  var re = new RegExp(pattern, 'g');
 
-   // get string
-   var searchString = document.getElementById("incoming").value;
+  // get string
+  var searchString = document.getElementById('incoming').value;
 
-   // replace
-   var resultString = searchString.replace(re,"<span class='found'>$&</span>");
-
-   // insert into page
-   document.getElementById("searchResult").innerHTML = resultString;
+  // replace
+  var resultString = searchString.replace(re, "<span class='found'>$&</span>");
+  // insert into page
+  document.getElementById('searchResult').innerHTML = resultString;
 }
 
-//--><!]]>
 </script>
 </head>
 <body>

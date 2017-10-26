@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <head>
-<title>Recipe</title>
+<title>HTML Entities(such as comma)</title>
 </head>
 <body>
 <div id="result"></div>
 <script>
 
-   var prefLineLength = 20;
-   var oldStr = "This is a string";
+var prefLineLength = 20;
+var oldStr = 'This is a string';
 
-   var diff = prefLineLength - oldStr.length;
-   var filler = '&nbsp;';
+var diff = prefLineLength - oldStr.length;
+var filler = '&nbsp;';
 
-   for (var i = 0; i < diff; i++) {
-      oldStr=filler + oldStr;
-   }
+for (var i = 0; i < diff; i++) {
+  oldStr = filler + oldStr;
+}
 
-  document.getElementById("result").innerHTML=oldStr;
+document.getElementById('result').innerHTML = oldStr;
 
 </script>
 

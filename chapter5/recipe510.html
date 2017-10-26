@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <head>
-<title>Recipe</title>
+<title>array.lastIndexOf(), array.splice(start, deleteCount, item1, item2, ...)</title>
 <script>
 
-var animals = new Array("dog","cat","seal","walrus","lion", "cat");
+var animals = ['dog', 'cat', 'seal', 'walrus', 'lion', 'cat'];
 
 // remove the element from array
-animals.splice(animals.indexOf("walrus"),1); // dog,cat,seal,lion,cat
-
+animals.splice(animals.indexOf('walrus'), 1); // dog,cat,seal,lion,cat
 // splice in new element
-animals.splice(animals.lastIndexOf("cat"),1,"monkey"); // dog,cat,seal,lion,monkey
+animals.splice(animals.lastIndexOf('cat'), 1, 'monkey'); // dog,cat,seal,lion,monkey
 
-alert(animals);
+console.log(animals);
+
 </script>
 
 </head>

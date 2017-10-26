@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <head>
-<title>Recipe</title>
+<title>arr.every(callback(currentValue, index, array)[, thisArg])</title>
 <script>
 
-var elemSet = new Array("**",123,"aaa","abc","-",46,"AAA");
+var elemSet = new Array('**', 123, 'aaa', 'abc', '-', 46, 'AAA');
 
 // testing function 
-function textValue (element,index,array) {
-   var textExp = /^[a-zA-Z]+$/;
-   return textExp.test(element);
+function textValue(element) {
+  var textExp = /^[a-zA-Z]+$/;
+  return textExp.test(element);
 }
 
 // run test
-alert(elemSet.every(textValue)); // false
+console.log(elemSet.every(textValue)); // false
 
-var elemSet = new Array("**",123,"aaa","abc","-",46,"AAA");
+var elemSet = new Array('**', 123, 'aaa', 'abc', '-', 46, 'AAA');
 
 // run test
-alert(elemSet.some(textValue)); // true
+console.log(elemSet.some(textValue)); // true
 
 </script>
 

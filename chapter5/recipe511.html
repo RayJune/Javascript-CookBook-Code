@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <head>
-<title>Recipe</title>
+<title>array.forEach(function callback(currentValue, index, array)</title>
 <script>
 
-var charSets = new Array("ab","bb","cd","ab","cc","ab","dd","ab");
+var charSets = new Array('ab', 'bb', 'cd', 'ab', 'cc', 'ab', 'dd', 'ab');
 
-function replaceElement(element,index,array) {
-   if (element == "ab") array[index] = "**";
-
+function replaceElement(element, index, array) {
+  if (element === 'ab') {
+    array[index] = '**';
+  }
 }
 
 // apply function to each array element
 charSets.forEach(replaceElement);
-alert(charSets); // prints **,bb,cd,**,cc,**,dd,**
+console.log(charSets); 
+// Array [ "**", "bb", "cd", "**", "cc", "**", "dd", "**" ]
+
 </script>
 
 </head>

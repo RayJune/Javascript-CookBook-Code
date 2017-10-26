@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <head>
-<title>Recipe</title>
+<title>Simple string addition</title>
 <script>
 
-window.onload=function() {
+window.onload = function () {
+  var mammals = ['cat', 'dog', 'human', 'whale', 'seal'];
+  var animalString = '';
 
-var mammals = new Array("cat","dog","human","whale","seal");
-var animalString = "";
-for (var i = 0; i < mammals. length; i++) {
-   animalString += mammals[i] + " ";
-}
-alert(animalString);
-}
+  for (var i = 0; i < mammals.length; i++) {
+    animalString = animalString + mammals[i] + ' ';
+  }
+  console.log(animalString);
+};
 
 </script>
 

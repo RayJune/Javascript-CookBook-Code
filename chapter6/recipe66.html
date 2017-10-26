@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <head>
-<title>Recipe</title>
+<title>array.reverse()</title>
 <script>
 
-window.onload=function() {
+/*
+  addition: The following method maybe not a good solution, you can use array.reverse()
+*/
 
-var reverseArray = function(x,indx,str) {
-   return indx == 0 ? str : reverseArray(x,--indx,(str+= " " + x[indx]));;
-}
+window.onload = function () {
+  var reverseArray = function (x, index, str) {
+    return index == 0 ? str : reverseArray(x, index--, (str = str + ' ' + x[index]));
+  };
 
- var arr = new Array('apple','orange','peach','lime');
- var str = reverseArray(arr,arr.length,"");
- alert(str);
+  var arr = ['apple', 'orange', 'peach', 'lime'];
+  var str = reverseArray(arr, arr.length, '');
+  console.log(str);
 
- var arr2 = ['car','boat','sun','computer'];
- str = reverseArray(arr2,arr2.length,"");
- alert(str);
-}
+  var arr2 = ['car', 'boat', 'sun', 'computer'];
+  str = reverseArray(arr2, arr2.length, '');
+  console.log(str);
+};
+
 </script>
 
 </head>

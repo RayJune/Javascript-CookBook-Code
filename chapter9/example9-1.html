@@ -14,56 +14,40 @@
 
 </style>
 <script>
-//<![CDATA[
-
-window.onload=function() {
-
+window.onload = function () {
   // first, disable all the input fields
-  document.forms[0].elements["intext"].disabled=true;
-  document.forms[0].elements["intext2"].disabled=true;
-  document.forms[0].elements["intext3"].disabled=true;
-
-  // next, attach the click event handler to the radio buttons
-  var radios = document.forms[0].elements["group1"];
-  for (var i = [0]; i < radios.length; i++)
-    radios[i].onclick=radioClicked;
+  document.forms[0].elements['intext'].disabled = true;
+  document.forms[0].elements['intext2'].disabled = true;
+  // next attach the click event handler to the radio buttons
+  document.forms[0].onclick = radioClicked;
 }
 
-function radioClicked() {
-
-  // find out which radio button was clicked and 
-  // disable/enable appropriate input elements
-  switch(this.value) {
-    case "one" :
-       document.forms[0].elements["intext"].disabled=false;
-       document.forms[0].elements["intext2"].disabled=true;
-       document.forms[0].elements["intext3"].disabled=true;
-       break;
-    case "two" :
-       document.forms[0].elements["intext2"].disabled=false;
-       document.forms[0].elements["intext"].disabled=true;
-       document.forms[0].elements["intext3"].disabled=true;
-       break;
-    case "three" :
-       document.forms[0].elements["intext3"].disabled=false;
-       document.forms[0].elements["intext"].disabled=true;
-       document.forms[0].elements["intext2"].disabled=true;
-       break;
+function radioClicked(e) {
+  if (e.target.type === 'radio') {
+    var form = document.forms[0];
+    // find out which radio button was clicked and disable/enable appropriate input elements
+    switch(e.target.value) {
+      case 'one':
+        form.elements['intext'].disabled = false;
+        form.elements['intext2'].disabled = true;
+        break;
+      case 'two':
+        form.elements['intext'].disabled = true;
+        form.elements['intext2'].disabled = false;
+        break;
+    }
   }
-
 }
 
-//--><!]]>
+
 </script>
 </head>
 <body>
 <form id="picker">
 Group 1: <input type="radio" name="group1" value="one" /><br />
 Group 2: <input type="radio" name="group1" value="two" /><br />
-Group 3: <input type="radio" name="group1" value="three" /><br /><br />
 <input type="text" id="intext" />
 <input type="text" id="intext2"  />
-<input type="text" id="intext3"  />
 </form>
 </body>
 </html>

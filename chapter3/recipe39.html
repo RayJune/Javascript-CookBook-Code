@@ -12,16 +12,17 @@
 </style>
 <script>
 
-window.onload=function() {
-var x = 0;
-setInterval(moveElement,1000);
+window.onload = function() {
+  var x = 0;
+  setInterval(moveElement, 100);
 
-function moveElement() {
-  x+=10;
-  var left = x + "px";
-  document.getElementById("redbox").style.left=left;
+  function moveElement() {
+    x += 10;
+    var left = x + 'px';
+    document.getElementById('redbox').style.left = left;
+  }
 }
-}
+
 </script>
 
 </head>

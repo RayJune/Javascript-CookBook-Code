@@ -7,19 +7,19 @@ window.onload=function() {
    document.onclick=processClick;
 }
 
-function processClick(evt) {
+function processClick(e) {
 
    // access event object
-   evt = evt || window.event;
+   e = e || window.event;
    var x = 0; var y = 0;
 
    // if event object has pageX property get position using pageX, pageY
-   if (evt.pageX) {
-      x = evt.pageX;
-      y = evt.pageY;
+   if (e.pageX) {
+      x = e.pageX;
+      y = e.pageY;
 
     // else if event has clientX property
-   } else if (evt.clientX) {
+   } else if (e.clientX) {
       var offsetX = 0; offsetY = 0;
 
        // if documentElement.scrollLeft supported
@@ -31,8 +31,8 @@ function processClick(evt) {
           offsetY = document.body.scrollTop;
       }
 
-      x = evt.clientX + offsetX;
-      y = evt.clientY + offsetY;
+      x = e.clientX + offsetX;
+      y = e.clientY + offsetY;
     }
   
 alert ("you clicked at x=" + x + " y=" + y);

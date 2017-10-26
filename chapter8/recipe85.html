@@ -16,6 +16,20 @@ function setActiveStyleSheet(title) {
      }
    }
 }
+
+function setActiveStyleSheet(title) {
+  var a;
+  var i;
+
+  for (i = 0; (a = document.querySelectorAll('link')[i]); i++) {
+    if (a.getAttribute('rel').indexOf('style') !== -1 && a.getAttribute('title')) {
+      a.disabled = true;
+      if (a.getAttribute('title') === title) {
+        a.disabled = false;
+      }
+    }
+  }
+}
 </script>
 
 </head>

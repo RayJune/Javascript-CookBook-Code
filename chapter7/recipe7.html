@@ -45,12 +45,12 @@ listenEvent(window,"load",function() {
     listenEvent(theform,"submit",validateForm);
      });
 
-function validateForm(evt) {
+function validateForm(e) {
    
-   evt = evt || window.event;
+   e = e || window.event;
 
    // pretend form is invalid
-   cancelEvent(evt);
+   cancelEvent(e);
 }
 
 </script>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-<title>Prevent Propagation</title>
+<title>e.stopPropagation()</title>
 <meta charset="utf-8">
 <style>
 #one
@@ -21,23 +21,22 @@
 var stopPropagation = false;
 
 function listenEvent(eventTarget, eventType, eventHandler) {
-   if (eventTarget.addEventListener) {
-      eventTarget.addEventListener(eventType, eventHandler,false);
-   } else if (eventTarget.attachEvent) {
-      eventType = "on" + eventType;
-      eventTarget.attachEvent(eventType, eventHandler);
-   } else {
-      eventTarget["on" + eventType] = eventHandler;
-   }
+  if (eventTarget.addEventListener) {
+    eventTarget.addEventListener(eventType, eventHandler, false);
+  } else if (eventTarget.attachEvent) {
+    eventType = 'on' + eventType;
+    eventTarget.attachEvent(eventType, eventHandler);
+  } else {
+    eventTarget['on' + eventType] = eventHandler; 
+  }
 }
 
-// cancel propagation 
-function  cancelPropagation (event) {
-   if (event.stopPropagation) {
-      event.stopPropagation();
-   } else {
-      event.cancelBubble = true;
-   }
+function cancelPropagation(e) {
+  if (e.stopPropagation) {
+    e.stopPropagation();
+  } else {
+    e.cancelBubble = true;
+  }
 }
 
 listenEvent(window,"load",function() {
@@ -50,14 +49,14 @@ function stopProp() {
     stopPropagation = true;
 }
 
-function clickBoxOne(evt) {
+function clickBoxOne(e) {
   alert("Hello from One");
 }
 
-function clickBoxTwo(evt) {
+function clickBoxTwo(e) {
   alert("Hi from Two");
   if (stopPropagation) {
-     cancelPropagation(evt);
+     cancelPropagation(e);
   }
 }
 </script>

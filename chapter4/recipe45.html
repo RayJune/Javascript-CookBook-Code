@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <head>
-<title>Recipe</title>
+<title>table's properties(rows, cells, data)</title>
 <script>
 
-window.onload=function() {
- 
-  var rows = document.getElementById("table1").children[0].rows;
-  var numArray = new Array();
+window.onload = function () {
+  var rows = document.getElementById('table1').children[0].rows;
+  var numArr = [];
 
   for (var i = 0; i < rows.length; i++) {
-     numArray[numArray.length] = parseInt(rows[i].cells[1].firstChild.data);
+    numArr[numArr.length] = parseInt(rows[i].cells[1].firstChild.data);
   }
 
-  alert(numArray.toString());
+  console.log(numArr.toString());
 }
+
 </script>
 
 </head>

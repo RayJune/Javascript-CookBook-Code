@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <head>
-<title>Recipe</title>
+<title>window.prompt, window.alert</title>
 <script>
 
-window.onload=function() {
-var strName = prompt("What's your name?", "");
+window.onload = function () {
+  var strName = prompt("What's your name?", '');
 
-if (strName == "Shelley") {
-   alert("Your name is Shelley! Good for you!");
-} else {
-   alert("Your name isn't Shelley. Bummer.");
-}
-  
-}
+  if (strName === 'Shelley') {
+    alert('Your name is Shelley! Good for you!');
+  } else {
+    alert("Your name isn't Shelley. Bummer.");
+  }
+};
 
 </script>
 

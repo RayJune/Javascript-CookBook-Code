@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-<title>Filtering Input</title>
+<title>e.preventDefault()</title>
 <script>
 
 var badChar;
@@ -17,25 +17,25 @@ function listenEvent(eventTarget, eventType, eventHandler) {
 }
 
 // cancel event
-function  cancelEvent (event) {
-   if (event.preventDefault) {
-      event.preventDefault();
+function  cancelEvent (e) {
+   if (e.preventDefault) {
+      e.preventDefault();
    } else {
-      event.returnValue = false;
+      e.returnValue = false;
    }
 }
 
 window.onload=function() {
    badChar = prompt("Enter the ASCII value of the keyboard key you want to filter","");
    var inputTA = document.getElementById("source");
-   listenEvent(inputTA,"keypress",processClick);
+   inputTA.addEventListener("keypress", processClick);
 }
 function processClick(evt) {
    evt = evt || window.event;
    var key = evt.charCode ? evt.charCode : evt.keyCode;
 
    // zap that bad boy
-   if (key == badChar) cancelEvent(evt);
+   if (key == badChar) evt.preventDefault();
 }
 
 </script>

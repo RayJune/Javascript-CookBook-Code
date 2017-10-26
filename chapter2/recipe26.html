@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <head>
-<title>Recipe</title>
+<title>string.replace(re, '$2, $1')</title>
 <script>
 
-window.onload=function() {
- var name = "Abe Lincoln";
+window.onload = function() {
+  var name = 'Abe Lincoln';
   var re = /^(\w+)\s(\w+)$/;
-  var newname = name.replace(re,"$2, $1");
+  var newname = name.replace(re, '$2, $1');
   alert(newname);
 }
+
 </script>
 
 </head>

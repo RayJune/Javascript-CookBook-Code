@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <head>
-<title>Recipe</title>
+<title>high order function(function return function)</title>
 <script>
 
 function greetingMaker(greeting) {
-   
-   function addName(name) {
-      return greeting + " " + name;
-   }
-   return addName;
+  return function addName(name) {
+    return greeting + ' ' + name;
+  } 
 }
 
-window.onload=function() {
-
-  var daytimeGreeting = greetingMaker("Good Day to you");
-  var nightGreeting = greetingMaker("Good Evening");
-
-  var name = prompt("Please enter your name","");
+window.onload = function () {
+  var daytimeGreeting = greetingMaker('Good Day to you');
+  var nightGreeting = greetingMaker('Good Evening');
+  var name = prompt('Please enter your name', '');
 
   // if daytime
-  alert(daytimeGreeting(name));
+  console.log(daytimeGreeting(name));
 
   // if night
-  alert(nightGreeting(name));
-}
+  console.log(nightGreeting(name));
+};
+
 </script>
 
 </head>

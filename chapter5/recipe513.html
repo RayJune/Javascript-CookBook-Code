@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <head>
-<title>Recipe</title>
+<title>array.filter(function callback(currentValue, index, array)[, thisArg]);
+</title>
 <script>
 
-function removeChars(element,index,array) {
-   return (element !== "**");
+function removeChars(element) {
+  return (element !== "**");
 }
 
-var charSet = new Array("**","bb","cd","**","cc","**","dd","**");
+var charSet = ["**","bb","cd","**","cc","**","dd","**"];
 
 var newArray = charSet.filter(removeChars);
-alert(newArray);
+console.log(newArray);
 
 </script>
 

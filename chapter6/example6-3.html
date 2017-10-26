@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Testing Memoization</title>
+<script>
+
+window.onload = function () {
+  function simpleFib(n) {
+    return n < 2 ? n : simpleFib(n - 1) + simpleFib(n - 2);
+  }
+
+  // Memoized Function, more succinct , from <Javascript Cookbook>
+  var bookFib = (function lazyDef() {
+    var memo = [0, 1];
+
+    return function fib(n) {
+      if (typeof memo[n] !== 'number') {
+        memo[n] = fib(n - 1) + fib(n - 2);
+      }
+
+      return memo[n];
+    };
+  }());
+
+  // Memoized Function , use lazy function definition, high performance
+  var myFib = (function lazyDef() {
+    var cache = [0, 1]; // lazy function definition
+
+    return function realFun(n) {
+      var i;
+
+      if (n >= cache.length) {
+        for (i = cache.length; i <= n; i++) {
+          cache[i] = cache[i - 2] + cache[i - 1];
+        }
+      }
+
+      return cache[n];
+    };
+  }());
+
+  function test(fun, name, num) {
+    console.time(name);
+    for (var i = 0; i <= num; i++) {
+      console.log(i + ' ' + fun(i));
+    }
+    console.timeEnd(name);
+  }
+
+
+  // console.log();  // crash
+  simpleFib(10);
+  // console.log(); // no trash
+
+  // bookFib(100);
+  // test(simpleFib, 'simple fib', 30); // 
+  // test(simpleFib, 'simple fib', 100); // memo over flow
+  // test(bookFib, 'book fib', 1000);
+  // test(myFib, 'my fib', 1000);
+};
+
+</script>
+</head>
+<body>
+<p>content</p>
+</body>
+</html>

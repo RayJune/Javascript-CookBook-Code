@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <head>
-<title>Recipe</title>
+<title>onclick, textarea.value</title>
 <script>
 
-window.onload=function() {
- document.getElementById("preview").onclick=processText;
+window.onload = function() {
+  document.getElementById('preview').onclick = processText;
 }
 
 function processText() {
- var txtBox = document.getElementById("inputbox");
- var lines = txtBox.value.split("\n");
+  var txtBox = document.getElementById('inputbox');
+  var lines = txtBox.value.split('\n');
 
- // generate HTML version of text
- var resultString  = "<p>";
- for (var i = 0; i < lines.length; i++) {
-   resultString += lines[i] + "<br />";
- }
- resultString += "</p>";
+  // generate HTML version of text
+  var resultString = '<p>';
+  for (var i = 0; i < lines.length; i++) {
+    resultString += lines[i] + '<br />';
+  }
+  resultString += '</p>';
 
- // print out to page
- var   blk   = document.getElementById("result");
- blk.innerHTML  =  resultString; 
+  // print out to page
+  var blk = document.getElementById('result');
+  blk.innerHTML = resultString;
 }
 
 </script>

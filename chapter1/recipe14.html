@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <head>
-<title>Recipe</title>
+<title>string.indexOf()</title>
 <script>
 
-window.onload=function() {
-var testValue = "This is the Cookbook's test string";
-var subsValue = "Cookbook";
+window.onload = function () {
+  var testValue = "This is the Cookbook's test string";
+  var subsValue = 'liga';
 
-var iValue = testValue.indexOf(subsValue); // returns value of 12, index of substring
+  var iValue = testValue.indexOf(subsValue); // returns value of 12, index of substring
 
-if (iValue != -1) 
-   alert(iValue);
-  
-}
+  if (iValue != -1) {
+    console.log(iValue);
+  } else {
+    console.log('no value');
+  }
+};
 
 </script>
 

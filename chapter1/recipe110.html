@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <head>
-<title>Recipe</title>
+<title>string.trim()</title>
 <script>
 
-window.onload=function() {
-  document.getElementById("preview").onclick=processText;
-}
+/*
+  The trim() method returns the string stripped of whitespace *only from both ends*. 
+  trim() does not affect the value of the string itself.
+*/
+
+// e.g.
+
+var a = ' ray june ';
+console.log(a.trim());  // ray june
+// if you want strip all whitespace, use regex
+console.log(a.replace(/\s/g, ''));  // rayjune 
+
+window.onload = function () {
+  document.getElementById('preview').onclick = processText;
+};
 
 function processText() {
-var   txtBox  = document.getElementById("test");
-var  lines  = txtBox.value.split("\n");
-var  resultString = "";
+  var txtBox = document.getElementById('test');
+  var lines = txtBox.value.split('\n');
+  var resultString = '';
 
-for (var i = 0; i < lines.length; i++) {
-   var strng = lines[i].trim();
-   resultString += strng + "-";
-}
- 
-document.getElementById("result").innerHTML=resultString; 
+  for (var i = 0; i < lines.length; i++) {
+    var strng = lines[i].trim();
+    resultString += strng + '-';
+  }
+  document.getElementById('result').innerHTML = resultString;
 }
 
 </script>

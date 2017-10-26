@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <head>
-<title>Recipe</title>
+<title>^ and $</title>
 <script>
 
-window.onload=function() {
+window.onload = function() {
+  var testString = '   this is the string    ';
+  console.log('before:' + testString);
 
-var testString = "   this is the string    ";
-alert("before:" + testString);
+  // trim white space from the benginning
+  testString = testString.replace(/^\s+/, '');
 
-// trim white space from the beginning
-testString = testString.replace(/^\s+/,"");
+  // trim white space from the end
+  testString = testString.replace(/\s+$/, '');
 
-// trim white space from the end
-testString = testString.replace(/\s+$/,"");
-
-alert("after:" + testString);
+  console.log('after:' + testString);
 }
+
 </script>
 
 </head>

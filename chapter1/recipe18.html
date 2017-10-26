@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <head>
-<title>Recipe</title>
+<title>innerHTML, Unicode Character</title>
 <script>
 
-window.onload=function() {
-var resultString = "<p>This page \u00A9 Shelley Powers </p>";
+window.onload = function() {
+  var resultString = "<p>This page \u00A9 RayJune Powers </p>";
 
-// print out to page
- var blk = document.getElementById("result");
- blk.innerHTML = resultString;
-  
+  // print out to page
+  var blk = document.getElementById('result');
+  blk.innerHTML = resultString;
 }
 
 </script>

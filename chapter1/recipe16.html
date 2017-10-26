@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <head>
-<title>Recipe</title>
+<title>typeof, object.valueOf()</title>
 <script>
+/*
+  The valueOf() method returns the primitive value of the specified object.
 
-window.onload=function() {
-// true if variable exists, is a string, and has a length greater than zero
+  You rarely need to invoke the valueOf method yourself; JavaScript automatically 
+  invokes it when encountering an object where a primitive value is expected.
 
-  if(((typeof   unknownVariable  !=  "undefined") &&
-     (typeof  unknownVariable.valueOf() ==  "string")) &&
-    (unknownVariable.length > 0)) {
-    alert("OK 1");
+  If an object has no primitive value, valueOf returns the object itself.
+*/
+
+window.onload = function () {
+  // true if variable exists, is a string, and has a length greater than zero
+  if (((typeof unknownVariable !== 'undefined') && (typeof unknownVariable.valueOf() === 'string')) && (unknownVariable.length > 0)) {
+    console.log('OK 1');
   }
 
   var unknownVariable;
-  if(((typeof   unknownVariable  !=  "undefined") &&
-     (typeof  unknownVariable.valueOf() ==  "string")) &&
-    (unknownVariable.length > 0)) {
-    alert("OK 2");
+  if (((typeof unknownVariable !== 'undefined') && (typeof unknownVariable.valueOf() === 'string')) && (unknownVariable.length > 0)) {
+    console.log('OK 2');
   }
 
-  unknownVariable = "test";
-  if(((typeof   unknownVariable  !=  "undefined") &&
-     (typeof  unknownVariable.valueOf() ==  "string")) &&
-    (unknownVariable.length > 0)) {
-    alert("OK 3");
+  unknownVariable = 'test';
+  if (((typeof unknownVariable !== 'undefined') && (typeof unknownVariable.valueOf() === 'string')) && (unknownVariable.length > 0)) {
+    console.log('OK 3');
   }
 
-  
-}
+  // addition by RayJune
+  console.log(typeof NaN);           // number
+  console.log(typeof function (){}); // function
+};
 
 </script>
 

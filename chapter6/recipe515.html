@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>array.reduce(callback(accumulator, currentValue, currentIndex, array)[, initialValue])</title>
+</head>
+<body>
+  <script>
+    // following code come from MDN
+    var sum = [0, 1, 2, 3].reduce(function (a, b) {
+      return a + b;
+    }, 0);
+    // sum is 6
+
+    var flattened = [[0, 1], [2, 3], [4, 5]].reduce(function(a, b) {
+      return a.concat(b);
+    }, []);
+    // flattened is [0, 1, 2, 3, 4, 5]
+  </script>
+</body>
+</html>

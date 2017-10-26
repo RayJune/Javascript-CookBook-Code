@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <head>
-<title>Recipe</title>
+<title>re.test(str)</title>
 <script>
 
-window.onload=function (){
-var cookbookString = new Array();
+window.onload = function () {
+  var cookbookString = new Array();
+  cookbookString[0] = "Joe's Cooking Book";
+  cookbookString[1] = "Sam's Cookbook";
+  cookbookString[2] = 'JavaScript CookBook';
+  cookbookString[3] = 'JavaScript cookbook';
 
-cookbookString[0] = "Joe's Cooking Book";
-cookbookString[1] = "Sam's Cookbook";
-cookbookString[2] = "JavaScript CookBook";
-cookbookString[3] = "JavaScript cookbook";
+  // search pattern
+  var pattern = /Cook.*Book/i;
+  for (var i = 0; i < cookbookString.length; i++) {
+    alert(cookbookString[i] + ' ' + pattern.test(cookbookString[i], i));
+  }
+};
 
-// search pattern
-var pattern = /Cook.*Book/i;
-for (var i = 0; i < cookbookString.length; i++)
-  alert(cookbookString[i] + " " + pattern.test(cookbookString[i],i));
-}
 </script>
 
 </head>
